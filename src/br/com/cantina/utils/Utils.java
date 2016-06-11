@@ -89,6 +89,10 @@ public class Utils {
         return new String[]{cliente == null?"-":cliente.getNome(), FORMATTER.format(transacao.getValue()), DATE_TIME_FORMAT.format(transacao.getTimestamp())};
     }
     
+    public static String[] getTransacaoAsRow(Transacao transacao){
+        return getTransacaoAsRow(transacao, ControllerProvider.getClienteJpaController());
+    }
+    
     public static String[] getTransacaoAVistaAsRow(Transacao transacao){
         return new String[]{FORMATTER.format(transacao.getValue()), DATE_TIME_FORMAT.format(transacao.getTimestamp())};
     }
