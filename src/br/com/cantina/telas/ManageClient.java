@@ -244,7 +244,7 @@ public class ManageClient extends javax.swing.JDialog {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
@@ -552,7 +552,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel)
-                        .addGap(0, 23, Short.MAX_VALUE))))
+                        .addGap(0, 50, Short.MAX_VALUE))))
         );
 
         jPanel7Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel, btOk});
@@ -714,7 +714,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel2)
-                        .addGap(0, 23, Short.MAX_VALUE))))
+                        .addGap(0, 50, Short.MAX_VALUE))))
         );
 
         jPanel10Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel2, btOk2});

@@ -8,6 +8,7 @@ package br.com.cantina.utils;
 
 import java.util.List;
 import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
 import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -20,8 +21,9 @@ import javax.swing.table.TableRowSorter;
 public class Table extends JTable{
     private DefaultTableModel model;
     public Table(String columns[]) {
-        getTableHeader().setReorderingAllowed(false);
+        super.getTableHeader().setReorderingAllowed(false);
         model = new DefaultTableModel(columns, 0);
+        super.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         super.setModel(model);
     }
     
