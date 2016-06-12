@@ -157,7 +157,7 @@
                           <Component id="jButton1" linkSize="6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton2" linkSize="6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="45" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -181,7 +181,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/checkmark-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/success.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Ok bt"/>
                   </Properties>
@@ -195,7 +195,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/cancel-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/error.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
@@ -650,7 +650,7 @@
                                   <Component id="btOk" linkSize="9" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btCancel" linkSize="9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -710,7 +710,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/shopping_cart-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/cart-5.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Vender"/>
                   </Properties>
@@ -724,7 +724,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/cancel-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/error.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>
@@ -816,7 +816,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/edit-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/user-32.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Editar"/>
                   </Properties>
@@ -830,7 +830,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/cancel-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/user-22.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Excluir"/>
                   </Properties>
@@ -860,7 +860,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/shop-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/wallet-1.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Detalhes"/>
                   </Properties>
@@ -902,7 +902,7 @@
                                   <Component id="btOk2" linkSize="8" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btCancel2" linkSize="8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -962,7 +962,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/checkmark-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/coins-1.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Pagar"/>
                   </Properties>
@@ -976,7 +976,7 @@
                       <Font name="Tahoma" size="14" style="0"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/cantina/icons/18/cancel-18.png"/>
+                      <Image iconType="3" name="/br/com/cantina/icons/16/error.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Cancelar"/>
                   </Properties>

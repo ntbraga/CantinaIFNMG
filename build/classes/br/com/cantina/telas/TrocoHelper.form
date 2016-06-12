@@ -44,7 +44,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="152" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="132" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/br/com/cantina/icons/18/checkmark-18.png"/>
+          <Image iconType="3" name="/br/com/cantina/icons/16/success.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Continuar"/>
       </Properties>

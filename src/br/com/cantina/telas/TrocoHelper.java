@@ -75,7 +75,7 @@ public class TrocoHelper extends javax.swing.JDialog {
         trocoField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/checkmark-18.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/success.png"))); // NOI18N
         jButton1.setText("Continuar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,7 +104,7 @@ public class TrocoHelper extends javax.swing.JDialog {
                         .addComponent(trocoField))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(0, 152, Short.MAX_VALUE)))
+                        .addGap(0, 132, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

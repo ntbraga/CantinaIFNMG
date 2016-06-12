@@ -15,7 +15,7 @@
                   <KeyStroke key="Shift+Ctrl+F"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/shop-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/rich.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fechar Caixa"/>
               </Properties>
@@ -26,7 +26,7 @@
                   <KeyStroke key="Shift+Ctrl+B"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/download-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/database-14.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Backup Database"/>
               </Properties>
@@ -37,7 +37,7 @@
                   <KeyStroke key="Shift+Ctrl+R"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/file-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/database-13.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Restore Database"/>
               </Properties>
@@ -46,6 +46,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Alt+F4"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/br/com/cantina/icons/16/exit-2.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fechar"/>
               </Properties>
@@ -63,7 +66,7 @@
                   <KeyStroke key="Shift+Ctrl+C"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/user_male-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/user-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Adicionar Cliente"/>
               </Properties>
@@ -77,7 +80,7 @@
                   <KeyStroke key="Shift+Ctrl+S"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/lock-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/safebox-2.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alterar Senha"/>
               </Properties>
@@ -91,7 +94,7 @@
                   <KeyStroke key="Shift+Ctrl+D"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/br/com/cantina/icons/18/bookmark-18.png"/>
+                  <Image iconType="3" name="/br/com/cantina/icons/16/cashier-1.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Detalhar Caixa"/>
               </Properties>
@@ -196,7 +199,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="btOk" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
+                          <EmptySpace pref="40" max="32767" attributes="0"/>
                           <Component id="btCancel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -264,7 +267,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/cantina/icons/18/shopping_cart-18.png"/>
+              <Image iconType="3" name="/br/com/cantina/icons/16/coin-3.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Vender"/>
           </Properties>
@@ -279,7 +282,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/cantina/icons/18/cancel-18.png"/>
+              <Image iconType="3" name="/br/com/cantina/icons/16/error.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cancelar"/>
           </Properties>
@@ -324,17 +327,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" pref="491" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" pref="487" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jTextField3" min="-2" pref="279" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -352,9 +358,9 @@
                       </Group>
                       <Component id="jLabel3" linkSize="4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="465" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="451" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -398,7 +404,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/cantina/icons/32/search-32.png"/>
+              <Image iconType="3" name="/br/com/cantina/icons/32/magnifying-glass.png"/>
             </Property>
           </Properties>
         </Component>
@@ -408,7 +414,7 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/com/cantina/icons/32/user_male-32.png"/>
+              <Image iconType="3" name="/br/com/cantina/icons/32/user-20.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Adicionar Cliente"/>
           </Properties>
@@ -519,7 +525,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane2" alignment="0" pref="428" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" alignment="0" pref="421" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>

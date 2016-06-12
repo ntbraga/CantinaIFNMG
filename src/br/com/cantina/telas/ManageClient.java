@@ -218,7 +218,7 @@ public class ManageClient extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/checkmark-18.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/success.png"))); // NOI18N
         jButton1.setText("Ok bt");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +227,7 @@ public class ManageClient extends javax.swing.JDialog {
         });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/cancel-18.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/error.png"))); // NOI18N
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +244,7 @@ public class ManageClient extends javax.swing.JDialog {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
@@ -500,7 +500,7 @@ public class ManageClient extends javax.swing.JDialog {
         jLabel13.setText("Data:");
 
         btOk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/shopping_cart-18.png"))); // NOI18N
+        btOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/cart-5.png"))); // NOI18N
         btOk.setText("Vender");
         btOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -509,7 +509,7 @@ public class ManageClient extends javax.swing.JDialog {
         });
 
         btCancel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/cancel-18.png"))); // NOI18N
+        btCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/error.png"))); // NOI18N
         btCancel.setText("Cancelar");
         btCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -552,7 +552,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel)
-                        .addGap(0, 50, Short.MAX_VALUE))))
+                        .addGap(0, 5, Short.MAX_VALUE))))
         );
 
         jPanel7Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel, btOk});
@@ -578,7 +578,7 @@ public class ManageClient extends javax.swing.JDialog {
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/edit-18.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/user-32.png"))); // NOI18N
         jButton3.setText("Editar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -587,7 +587,7 @@ public class ManageClient extends javax.swing.JDialog {
         });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/cancel-18.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/user-22.png"))); // NOI18N
         jButton4.setText("Excluir");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -602,7 +602,7 @@ public class ManageClient extends javax.swing.JDialog {
         totalField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/shop-18.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/wallet-1.png"))); // NOI18N
         jButton5.setText("Detalhes");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -662,7 +662,7 @@ public class ManageClient extends javax.swing.JDialog {
         jLabel17.setText("Data:");
 
         btOk2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btOk2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/checkmark-18.png"))); // NOI18N
+        btOk2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/coins-1.png"))); // NOI18N
         btOk2.setText("Pagar");
         btOk2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -671,7 +671,7 @@ public class ManageClient extends javax.swing.JDialog {
         });
 
         btCancel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btCancel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/18/cancel-18.png"))); // NOI18N
+        btCancel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/error.png"))); // NOI18N
         btCancel2.setText("Cancelar");
         btCancel2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -714,7 +714,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel2)
-                        .addGap(0, 50, Short.MAX_VALUE))))
+                        .addGap(0, 5, Short.MAX_VALUE))))
         );
 
         jPanel10Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel2, btOk2});
