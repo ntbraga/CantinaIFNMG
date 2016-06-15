@@ -43,10 +43,10 @@ public class DatabaseBackup extends javax.swing.JDialog {
     public DatabaseBackup(java.awt.Frame parent, File location) {
         super(parent, true);
         initComponents();
-        setTitle("Backup - "+location.getName());
+        super.setTitle("Backup - "+location.getName());
         this.location = location;
         jTextField1.setText(location.getPath());
-        setLocationRelativeTo(null);
+        super.setLocationRelativeTo(null);
         startBackup();
     }
     
@@ -82,7 +82,6 @@ public class DatabaseBackup extends javax.swing.JDialog {
                 }
                 setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 dispose();
-                System.exit(0);
             }            
         };
         task.start();

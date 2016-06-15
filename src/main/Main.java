@@ -7,7 +7,6 @@ package main;
 
 import br.com.cantina.modeldb.Login;
 import br.com.cantina.modeldb.controller.LoginJpaController;
-import br.com.cantina.telas.DatabaseRestore;
 import br.com.cantina.telas.LoginFrame;
 import br.com.cantina.telas.Splash;
 import br.com.cantina.telas.admin.RootAdminFrame;
@@ -127,7 +126,6 @@ public class Main {
                     }
                     //</editor-fold>
                     publishProgress("Iniciando...");
-                    //</editor-fold>
                     frame = new LoginFrame();
                     return null;
                 }

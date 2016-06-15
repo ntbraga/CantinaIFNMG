@@ -20,6 +20,7 @@ import br.com.cantina.utils.Table;
 import java.awt.Component;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.NumberFormat;
@@ -724,8 +725,18 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        this.setVisible(false);
-        new DatabaseRestore(this).setVisible(true);
+        if(JOptionPane.showConfirmDialog(this,
+                "O programa será fechado e o utilitário de restauração será aberto, deseja continuar?",
+                "Iniciar Restauração",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
+            try {
+                new ProcessBuilder("java", "-jar", Utils.EXEC_PATH+File.separator+"DatabaseRestore.jar").start();
+                System.exit(0);
+            } catch (IOException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_jMenuItem4ActionPerformed
     public final void preencheClienteTableLike(String like){
         int size = 40;

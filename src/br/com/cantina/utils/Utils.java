@@ -212,6 +212,9 @@ public class Utils {
     }
     
     public static File pack(String sourceDirPath, String zipFilePath) throws IOException {
+        File f = new File(zipFilePath);
+        if(f.exists()) f.delete();
+        
         Path p = Files.createFile(Paths.get(zipFilePath));
         AtomicInteger i = new AtomicInteger(0);
         try (ZipOutputStream zs = new ZipOutputStream(Files.newOutputStream(p))) {
