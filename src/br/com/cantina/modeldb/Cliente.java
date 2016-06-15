@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Cliente.findByTelefone", query = "SELECT c FROM Cliente c WHERE c.telefone = :telefone"),
     @NamedQuery(name = "Cliente.findByRg", query = "SELECT c FROM Cliente c WHERE c.rg = :rg"),
     @NamedQuery(name = "Cliente.findByCpf", query = "SELECT c FROM Cliente c WHERE c.cpf = :cpf"),
-    @NamedQuery(name = "Cliente.findLike", query = "SELECT c FROM Cliente c WHERE c.nome LIKE :nome")})
+    @NamedQuery(name = "Cliente.findLike", query = "SELECT c FROM Cliente c WHERE c.nome LIKE :nome"),
+    @NamedQuery(name = "Cliente.deleteAll", query = "DELETE FROM Cliente")})
 public class Cliente implements Serializable {
 
     private static final long serialVersionUID = 1L;

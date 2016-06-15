@@ -7,6 +7,7 @@ package main;
 
 import br.com.cantina.modeldb.Login;
 import br.com.cantina.modeldb.controller.LoginJpaController;
+import br.com.cantina.telas.DatabaseRestore;
 import br.com.cantina.telas.LoginFrame;
 import br.com.cantina.telas.Splash;
 import br.com.cantina.telas.admin.RootAdminFrame;
@@ -54,7 +55,7 @@ public class Main {
         System.out.println("\n\tHELP MENU");
         System.out.println("\t\thelp ou ?: exibe ajuda");
         System.out.println("\t\t-drop database: exclui a database do programa\n\t\t\tCuidado, esta ação não pode ser desfeita!");
-        System.out.println("\t\t-remake database: recria a database do programa\n\t\t\tCuidado, esta ação não pode ser desfeita!");
+        System.out.println("\t\t-retore database: Abre o assistente de recuperação de backup\n\t\t\tCuidado, esta ação não pode ser desfeita!");
         System.out.println("\t\t-login root [senha]: realiza login com superuser root");
         System.out.println("\t----------\n");
     }
@@ -67,7 +68,7 @@ public class Main {
             }
         }
         
-        if(args.length == 2){
+        if(args.length == 2){            
             if(args[0].equals("-drop") && args[1].equals("database")){
                 if(loginContinue()){
                     Utils.getDbPathAsFile().delete();
@@ -76,20 +77,10 @@ public class Main {
                 return false;
             }
             
-            if(args[0].equals("-remake") && args[1].equals("database")){
-                if(loginContinue()){
-                    Utils.getDbPathAsFile().delete();
-                    System.out.println("DATABASE DELETADA COM SUCESSO!");
-                    if(!Utils.getDbPathAsFile().exists()){
-                        Utils.getEntityManagerFactory().createEntityManager();
-                        System.out.println("DATABASE RECRIADA COM SUCESSO!");
-                    }
-                }else System.out.println("Usuário e/ou senha incorretos.");
-                return false;
-            }
         }
         
         if(args.length == 3){
+            
             if(args[0].equals("-login") && args[1].equals("root") && !args[2].isEmpty()){
                 Login login = new Login();
                 login.setLogin(args[1]);
@@ -98,6 +89,7 @@ public class Main {
                 return false;
             }
         }
+        
         return true;
     }
     

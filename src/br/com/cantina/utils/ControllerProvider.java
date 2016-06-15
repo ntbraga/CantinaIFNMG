@@ -16,40 +16,25 @@ import static br.com.cantina.utils.Utils.getEntityManagerFactory;
  *
  * @author Taty Braga
  */
-public class ControllerProvider {    
-    private static CaixaJpaController caixaJpaController;
-    private static ClienteJpaController clienteJpaController;
-    private static EnderecoJpaController enderecoJpaController;
-    private static LoginJpaController loginJpaController;
-    private static TransacaoJpaController transacaoJpaController;
+public class ControllerProvider {  
 
     public static CaixaJpaController getCaixaJpaController() {
-        if(caixaJpaController == null) caixaJpaController
-                = new CaixaJpaController(getEntityManagerFactory());
-        return caixaJpaController;
+        return new CaixaJpaController(getEntityManagerFactory());
     }
 
     public static ClienteJpaController getClienteJpaController() {
-        if(clienteJpaController == null) clienteJpaController
-                = new ClienteJpaController(getEntityManagerFactory());
-        return clienteJpaController;
+        return new ClienteJpaController(getEntityManagerFactory());
     }
 
     public static EnderecoJpaController getEnderecoJpaController() {
-        if(enderecoJpaController == null) enderecoJpaController
-                = new EnderecoJpaController(getEntityManagerFactory());
-        return enderecoJpaController;
+        return new EnderecoJpaController(getEntityManagerFactory());
     }
 
     public static LoginJpaController getLoginJpaController() {
-        if(loginJpaController == null) loginJpaController
-                = new LoginJpaController(getEntityManagerFactory());
-        return loginJpaController;
+        return new LoginJpaController(getEntityManagerFactory());
     }
 
     public static TransacaoJpaController getTransacaoJpaController() {
-        if(transacaoJpaController == null) transacaoJpaController
-                = new TransacaoJpaController(getEntityManagerFactory());
-        return transacaoJpaController;
+        return new TransacaoJpaController(getEntityManagerFactory());
     }
 }

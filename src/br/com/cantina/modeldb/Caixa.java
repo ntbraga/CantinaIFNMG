@@ -33,7 +33,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Caixa.findByAberto", query = "SELECT c FROM Caixa c WHERE c.aberto = :aberto"),
     @NamedQuery(name = "Caixa.findByTimeopen", query = "SELECT c FROM Caixa c WHERE c.timeopen = :timeopen"),
     @NamedQuery(name = "Caixa.findByTimeclose", query = "SELECT c FROM Caixa c WHERE c.timeclose = :timeclose"),
-    @NamedQuery(name = "Caixa.findNotClosed", query = "SELECT c FROM Caixa c WHERE c.aberto = true")})
+    @NamedQuery(name = "Caixa.findNotClosed", query = "SELECT c FROM Caixa c WHERE c.aberto = true"),
+    @NamedQuery(name = "Caixa.deleteAll", query = "DELETE FROM Caixa")})
 public class Caixa implements Serializable {
 
     private static final long serialVersionUID = 1L;

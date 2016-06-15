@@ -7,6 +7,8 @@ package br.com.cantina.utils;
 
 import br.com.cantina.modeldb.Caixa;
 import br.com.cantina.modeldb.Cliente;
+import br.com.cantina.modeldb.Endereco;
+import br.com.cantina.modeldb.Login;
 import br.com.cantina.modeldb.Transacao;
 import br.com.cantina.modeldb.controller.ClienteJpaController;
 import br.com.cantina.modeldb.controller.TransacaoJpaController;
@@ -16,17 +18,32 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
 import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URISyntaxException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
@@ -43,6 +60,7 @@ import main.Main;
 public class Utils {
     public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
     public static final SimpleDateFormat DATE_TIME_FORMAT = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+    public static final SimpleDateFormat FILE_DATE_FORMAT = new SimpleDateFormat("ddMMyyyy");
     public static final NumberFormat FORMATTER = NumberFormat.getCurrencyInstance();
     private static EntityManagerFactory factory;
     public static final String LOCATION = "";
@@ -55,8 +73,16 @@ public class Utils {
         }
     }
     public static EntityManagerFactory getEntityManagerFactory(){
-        if(factory == null) factory = Persistence.createEntityManagerFactory("CantinaIFNMGPU");
+        if(factory == null)
+            factory = Persistence.createEntityManagerFactory("CantinaIFNMGPU");
         return factory;
+    }
+    
+    public static void CloseEntityManagerFactory(){
+        if(factory != null && factory.isOpen()){
+            factory.close();
+            factory = null;
+        }
     }
     
     public static String getMd5String(String t){
@@ -71,7 +97,13 @@ public class Utils {
     }
     
     public static String getDbPath(){
+        new File(EXEC_PATH+File.separator+"DB").mkdirs();
         return EXEC_PATH+File.separator+"DB";
+    }
+    
+    public static String getBackupPath(){
+        new File(EXEC_PATH+File.separator+"backup").mkdirs();
+        return EXEC_PATH+File.separator+"backup";
     }
     
     public static File getDbPathAsFile(){
@@ -169,4 +201,59 @@ public class Utils {
         }
         return icons;
     }
+    
+    public static String getBackupFileName(){
+        return "backup-"+FILE_DATE_FORMAT.format(new Date())+".bck";
+    }
+    
+    private static EntityManager getManager(){
+        return getEntityManagerFactory()
+                .createEntityManager();
+    }
+    
+    public static File pack(String sourceDirPath, String zipFilePath) throws IOException {
+        Path p = Files.createFile(Paths.get(zipFilePath));
+        AtomicInteger i = new AtomicInteger(0);
+        try (ZipOutputStream zs = new ZipOutputStream(Files.newOutputStream(p))) {
+            Path pp = Paths.get(sourceDirPath);
+            Files.walk(pp)
+              .filter(path -> !Files.isDirectory(path))
+              .forEach(path -> {
+                  String sp = path.toAbsolutePath().toString().replace(pp.toAbsolutePath().toString(), "").replace(path.getFileName().toString(), "");
+                  ZipEntry zipEntry = new ZipEntry(sp + "/" + path.getFileName().toString());
+                  try {
+                      zs.putNextEntry(zipEntry);
+                      zs.write(Files.readAllBytes(path));
+                      zs.closeEntry();
+                      i.addAndGet(1);
+                } catch (IOException e) {
+                    System.err.println(e.getMessage()+"<<<<<<<<<<<<<<");
+                }
+              });
+        }
+        return p.toFile();
+    }
+    
+    public static boolean deletePath(File dir){
+        try {
+            Files.walkFileTree(dir.toPath(), new SimpleFileVisitor<Path>(){
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    Files.deleteIfExists(file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                    Files.deleteIfExists(dir);
+                    return FileVisitResult.CONTINUE;
+                }                
+            });
+            return true;
+        } catch (IOException ex) {
+            Logger.getLogger(Utils.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+    
 }

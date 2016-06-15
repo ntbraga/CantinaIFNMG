@@ -17,6 +17,9 @@ import br.com.cantina.utils.ChangeType;
 import br.com.cantina.utils.Utils;
 import br.com.cantina.utils.ControllerProvider;
 import br.com.cantina.utils.Table;
+import java.awt.Component;
+import java.awt.event.WindowEvent;
+import java.io.File;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.NumberFormat;
@@ -27,7 +30,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.TypedQuery;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.table.TableColumn;
 
 /**
@@ -169,6 +175,7 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -346,6 +353,7 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jTable3);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/change.png"))); // NOI18N
         jLabel6.setText("Total:");
 
         aVistaField.setEditable(false);
@@ -386,6 +394,7 @@ public class MainFrame extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable2);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/cart-15.png"))); // NOI18N
         jLabel7.setText("Total fiado:");
 
         aPrazoField.setEditable(false);
@@ -423,6 +432,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToolBar1.add(filler1);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/cashier.png"))); // NOI18N
         jLabel4.setText("Info Caixa");
         jToolBar1.add(jLabel4);
         jToolBar1.add(filler3);
@@ -432,6 +442,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToolBar1.add(filler2);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/user-23.png"))); // NOI18N
         jLabel5.setText("Info Login");
         jToolBar1.add(jLabel5);
         jToolBar1.add(filler4);
@@ -439,31 +450,51 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenu1.setText("Arquivo");
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/rich.png"))); // NOI18N
         jMenuItem5.setText("Fechar Caixa");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem5);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/database-14.png"))); // NOI18N
         jMenuItem3.setText("Backup Database");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/database-13.png"))); // NOI18N
         jMenuItem4.setText("Restore Database");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem4);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/exit-2.png"))); // NOI18N
         jMenuItem6.setText("Fechar");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem6);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ferramentas");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/user-20.png"))); // NOI18N
         jMenuItem1.setText("Adicionar Cliente");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -473,7 +504,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem1);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/safebox-2.png"))); // NOI18N
         jMenuItem2.setText("Alterar Senha");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -483,7 +514,17 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItem2);
 
-        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/archive-10.png"))); // NOI18N
+        jMenuItem8.setText("Ver Caixas");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/cantina/icons/16/cashier-1.png"))); // NOI18N
         jMenuItem7.setText("Detalhar Caixa");
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
@@ -580,12 +621,16 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        if(JOptionPane.showConfirmDialog(this, "Deseja fechar o caixa antes de fechar o programa?", "Fechar Caixa", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) == JOptionPane.YES_OPTION){
-            if(CaixaManager.closeCaixa(caixa)){
-                System.out.println(caixa.getAberto());
+        if(caixa.getAberto()){
+            if(JOptionPane.showConfirmDialog(this, "Deseja fechar o caixa antes de fechar o programa?", "Fechar Caixa", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) == JOptionPane.YES_OPTION){
+                if(CaixaManager.closeCaixa(caixa)){
+                    formWindowClosing(evt);
+                }
             }
+        }else{
+            new ManageCaixaDialog(this, caixa).setVisible(true);
         }
-        Utils.getEntityManagerFactory().close();
+        Utils.CloseEntityManagerFactory();
     }//GEN-LAST:event_formWindowClosing
 
     private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyTyped
@@ -624,6 +669,64 @@ public class MainFrame extends javax.swing.JFrame {
         new ManageCaixaDialog(this, caixa).setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        if(JOptionPane.showConfirmDialog(this,
+                "Deseja realmente fechar o caixa?",
+                "Fechar caixa",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE) == JOptionPane.OK_OPTION &&
+                CaixaManager.closeCaixa(caixa)){
+            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        new ShowCaixas(this).setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        JFileChooser chooser = new JFileChooser(Utils.getBackupPath()+File.separator);
+        chooser.setMultiSelectionEnabled(false);
+        chooser.setSelectedFile(new File(Utils.getBackupPath()+File.separator+Utils.getBackupFileName()));
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setFileFilter(new FileFilter() {
+            @Override
+            public boolean accept(File f) {
+                return f.getName().endsWith(".bck");
+            }
+
+            @Override
+            public String getDescription() {
+                return "Arquivo de backup (*.bck)";
+            }
+        });
+        if(chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION){
+            File selected = chooser.getSelectedFile();
+            if(selected.exists()){
+                if(JOptionPane
+                        .showConfirmDialog(this, 
+                                "O arquivo já existe, deseja substituí-lo?", 
+                                "Arquivo Existente", 
+                                JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE) != JOptionPane.YES_OPTION){
+                    jMenuItem3ActionPerformed(evt);
+                    return;
+                }
+            }
+            new DatabaseBackup(this, selected).setVisible(true);
+        }
+        
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        this.setVisible(false);
+        new DatabaseRestore(this).setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
     public final void preencheClienteTableLike(String like){
         int size = 40;
         TableColumn column = tableClientes.getColumnModel().getColumn(0);
@@ -681,6 +784,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

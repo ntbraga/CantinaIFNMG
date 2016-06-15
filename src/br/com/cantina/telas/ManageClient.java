@@ -244,7 +244,7 @@ public class ManageClient extends javax.swing.JDialog {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2});
@@ -427,6 +427,7 @@ public class ManageClient extends javax.swing.JDialog {
             ex.printStackTrace();
         }
         telefoneField.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        telefoneField.setName("Telefone"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -552,7 +553,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel)
-                        .addGap(0, 5, Short.MAX_VALUE))))
+                        .addGap(0, 35, Short.MAX_VALUE))))
         );
 
         jPanel7Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel, btOk});
@@ -714,7 +715,7 @@ public class ManageClient extends javax.swing.JDialog {
                         .addComponent(btOk2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btCancel2)
-                        .addGap(0, 5, Short.MAX_VALUE))))
+                        .addGap(0, 35, Short.MAX_VALUE))))
         );
 
         jPanel10Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btCancel2, btOk2});

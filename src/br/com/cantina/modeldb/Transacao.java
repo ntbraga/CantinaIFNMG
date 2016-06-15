@@ -39,7 +39,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Transacao.findVendaAVista", query = "SELECT t FROM Transacao t WHERE t.idcaixa = :idcaixa AND t.type = 'venda' AND t.idcliente IS NULL ORDER BY t.timestamp DESC"),
     @NamedQuery(name = "Transacao.findPaymentsByCaixa", query = "SELECT t FROM Transacao t WHERE t.idcaixa = :idcaixa AND ((t.type = 'venda' AND t.idcliente IS NULL) OR (t.type = 'pay' AND t.idcliente IS NOT NULL)) ORDER BY t.timestamp DESC"),
     @NamedQuery(name = "Transacao.findVendasByIdcliente", query = "SELECT t FROM Transacao t WHERE t.idcliente = :idcliente AND t.type = 'venda'"),
-    @NamedQuery(name = "Transacao.findPayByIdcliente", query = "SELECT t FROM Transacao t WHERE t.idcliente = :idcliente AND t.type = 'pay'")})
+    @NamedQuery(name = "Transacao.findPayByIdcliente", query = "SELECT t FROM Transacao t WHERE t.idcliente = :idcliente AND t.type = 'pay'"),
+    @NamedQuery(name = "Transacao.deleteAll", query = "DELETE FROM Transacao")})
 public class Transacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
