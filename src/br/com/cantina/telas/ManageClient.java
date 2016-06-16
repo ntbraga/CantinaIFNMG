@@ -84,7 +84,7 @@ public class ManageClient extends javax.swing.JDialog {
                 jButton1.setText("Ok");
                 boolean enable = Utils.getSumDept(cliente, transacaoController) > 0;
                 valorField1.setEnabled(enable);
-                btOk2.setEnabled(enable);
+                btOk2.setEnabled(false);
                 btCancel2.setEnabled(enable);
                 setClienteFields();
                 enableInPanel(jPanel1, false);
@@ -524,6 +524,9 @@ public class ManageClient extends javax.swing.JDialog {
         valorField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         valorField.setValue(null);
         valorField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                valorFieldFocusGained(evt);
+            }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 valorFieldFocusLost(evt);
             }
@@ -954,6 +957,12 @@ public class ManageClient extends javax.swing.JDialog {
         valorField.setText("R$ "+valorField.getText());
         try {
             valorField.commitEdit();
+            String t = valorField.getText().replace("0", "").trim();
+            if(t.equals("R$") || valorField.getText().isEmpty()){
+                valorField.setText(null);
+                valorField.requestFocus();
+                btOk.setEnabled(false);
+            }
         } catch (ParseException ex) {
             valorField.setText("");
         }
@@ -963,7 +972,8 @@ public class ManageClient extends javax.swing.JDialog {
         btOk.setEnabled(!valorField.getText().isEmpty());
         dataField.setText(Utils.DATE_FORMAT.format(date = new Date()));
         if(evt.getKeyCode() == 10){
-            btOk.requestFocus();
+            if(btOk.isEnabled())
+                btOk.requestFocus();
         }
     }//GEN-LAST:event_valorFieldKeyReleased
 
@@ -972,6 +982,12 @@ public class ManageClient extends javax.swing.JDialog {
         valorField1.setText("R$ "+valorField1.getText());
         try {
             valorField1.commitEdit();
+            String t = valorField1.getText().replace("0", "").trim();
+            if(t.equals("R$") || valorField1.getText().isEmpty()){
+                valorField1.setText(null);
+                valorField1.requestFocus();
+                btOk2.setEnabled(false);
+            }
         } catch (ParseException ex) {
             valorField1.setText("");
         }
@@ -981,9 +997,14 @@ public class ManageClient extends javax.swing.JDialog {
         btOk2.setEnabled(!valorField1.getText().isEmpty());
         dataField2.setText(Utils.DATE_FORMAT.format(date = new Date()));
         if(evt.getKeyCode() == 10){
-            btOk2.requestFocus();
+            if(btOk2.isEnabled())
+                btOk2.requestFocus();
         }
     }//GEN-LAST:event_valorField1KeyReleased
+
+    private void valorFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_valorFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valorFieldFocusGained
     NumberFormat formatter = NumberFormat.getCurrencyInstance();
     private Date date;
     private void clearSellFields(){

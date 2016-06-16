@@ -643,6 +643,13 @@ public class MainFrame extends javax.swing.JFrame {
         valorField.setText("R$ "+valorField.getText());
         try {
             valorField.commitEdit();
+
+            String t = valorField.getText().replace("0", "").trim();
+            if(t.equals("R$") || valorField.getText().isEmpty()){
+                valorField.setText(null);
+                valorField.requestFocus();
+                btOk.setEnabled(false);
+            }
         } catch (ParseException ex) {
             valorField.setText("");
         }
@@ -652,7 +659,8 @@ public class MainFrame extends javax.swing.JFrame {
         btOk.setEnabled(!valorField.getText().isEmpty());
         dataField.setText(Utils.DATE_FORMAT.format(date = new Date()));
         if(evt.getKeyCode() == 10){
-            btOk.requestFocus();
+            if(btOk.isEnabled())
+                btOk.requestFocus();
         }
     }//GEN-LAST:event_valorFieldKeyReleased
 

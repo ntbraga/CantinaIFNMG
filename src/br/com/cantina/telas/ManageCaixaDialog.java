@@ -32,8 +32,7 @@ public class ManageCaixaDialog extends javax.swing.JDialog {
     public ManageCaixaDialog(java.awt.Frame parent, Caixa caixa) {
         super(parent, true);
         initComponents();
-        System.out.println(caixa.getIdcaixa());
-        this.setLocationRelativeTo(null);
+        super.setLocationRelativeTo(null);
         this.caixa = caixa;
         aVista = (Table) jTable3;
         notas = (Table) jTable2;    
